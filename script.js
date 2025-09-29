@@ -19,3 +19,4 @@ backBtn.addEventListener('click', (e) => {
     inquiryPanel.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
+

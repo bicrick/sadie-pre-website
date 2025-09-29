@@ -1,0 +1,415 @@
+/* 
+  SQUARESPACE CUSTOM CSS
+  =====================
+  1. Upload font file (Afrah-Light.otf) via Design > Custom CSS > Manage Custom Files
+  2. Upload logo (script-logo-brown.png) via Design > Custom CSS > Manage Custom Files
+  3. Upload background (SellersStudio-ScriptLogo-background.jpg) via Design > Custom CSS > Manage Custom Files
+  4. Update the URLs below with your actual Squarespace file URLs
+*/
+
+@font-face {
+    font-family: 'Afrah';
+    src: url('/s/Afrah-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Afrah', serif;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url('/s/SellersStudio-ScriptLogo-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.ss-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ss-container.slide-left {
+    transform: translateX(-100%);
+}
+
+.ss-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ss-logo {
+    width: 400px;
+    max-width: 80vw;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.ss-main-heading {
+    font-family: 'Afrah', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgb(63, 46, 30);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ss-subheading {
+    font-family: 'Afrah', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgb(63, 46, 30);
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.ss-subheading-link {
+    font-family: 'Afrah', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: rgb(63, 46, 30);
+    text-transform: uppercase;
+    margin-top: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.ss-subheading-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(63, 46, 30);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ss-subheading-link:hover::after {
+    opacity: 1;
+}
+
+.ss-back-home-link {
+    font-family: 'Afrah', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgb(63, 46, 30);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid rgb(63, 46, 30);
+    transition: all 0.3s ease;
+}
+
+.ss-back-home-link:hover {
+    background-color: rgb(63, 46, 30);
+    color: #f5f1e8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .ss-logo {
+        width: 300px;
+    }
+    
+    .ss-main-heading {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .ss-subheading {
+        font-size: 1.5rem;
+        letter-spacing: 0.15em;
+    }
+}
+
+@media (max-width: 480px) {
+    .ss-logo {
+        width: 250px;
+    }
+    
+    .ss-main-heading {
+        font-size: 1.8rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .ss-subheading {
+        font-size: 1.2rem;
+        letter-spacing: 0.12em;
+    }
+    
+    .ss-subheading-link {
+        font-size: 1.2rem;
+        letter-spacing: 0.12em;
+    }
+}
+
+/* Inquiry Panel Styles */
+.ss-inquiry-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.ss-inquiry-panel.active {
+    transform: translateX(0);
+}
+
+.ss-inquiry-panel-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    min-height: 100vh;
+}
+
+.ss-back-link {
+    font-family: 'Afrah', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: rgb(63, 46, 30);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.ss-back-link:hover {
+    opacity: 0.7;
+}
+
+.ss-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.ss-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.ss-form-group label {
+    font-family: 'Afrah', serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgb(63, 46, 30);
+    text-transform: uppercase;
+}
+
+.ss-form-group input[type="text"],
+.ss-form-group input[type="email"],
+.ss-form-group input[type="date"],
+.ss-form-group input[type="number"],
+.ss-form-group select,
+.ss-form-group textarea {
+    font-family: 'Afrah', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.4rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(63, 46, 30, 0.6);
+    background-color: transparent;
+    color: rgb(63, 46, 30);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.ss-form-group input::placeholder,
+.ss-form-group textarea::placeholder {
+    color: rgba(63, 46, 30, 0.5);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.ss-form-group input:focus,
+.ss-form-group select:focus,
+.ss-form-group textarea:focus {
+    border-bottom-color: rgb(63, 46, 30);
+    border-bottom-width: 1.5px;
+}
+
+.ss-form-group textarea {
+    resize: vertical;
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+.ss-form-group input[type="date"] {
+    font-style: italic;
+    color: rgba(63, 46, 30, 0.5);
+}
+
+.ss-form-group input[type="date"]:focus,
+.ss-form-group input[type="date"]:valid {
+    color: rgb(63, 46, 30);
+    font-style: normal;
+}
+
+.ss-form-group input[type="number"] {
+    font-style: italic;
+}
+
+.ss-form-group input[type="number"]:focus,
+.ss-form-group input[type="number"]:valid {
+    font-style: normal;
+}
+
+.ss-form-group select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1L6 6L11 1" stroke="%233F2E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+    font-style: italic;
+}
+
+.ss-form-group select:focus,
+.ss-form-group select:valid {
+    font-style: normal;
+}
+
+.ss-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.ss-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: 'Afrah', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgb(63, 46, 30);
+}
+
+.ss-checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: rgb(63, 46, 30);
+}
+
+.ss-checkbox-label {
+    user-select: none;
+}
+
+.ss-submit-button {
+    font-family: 'Afrah', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgb(63, 46, 30);
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 0.7rem 2.25rem;
+    border: 1.5px solid rgb(63, 46, 30);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.ss-submit-button:hover {
+    background-color: rgb(63, 46, 30);
+    color: #f5f1e8;
+}
+
+@media (max-width: 768px) {
+    .ss-inquiry-panel-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ss-inquiry-form {
+        gap: 2.5rem;
+    }
+    
+    .ss-form-group input[type="text"],
+    .ss-form-group input[type="email"],
+    .ss-form-group input[type="date"],
+    .ss-form-group input[type="number"],
+    .ss-form-group select,
+    .ss-form-group textarea {
+        font-size: 1rem;
+    }
+    
+    .ss-checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .ss-inquiry-panel-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .ss-inquiry-form {
+        gap: 2rem;
+    }
+    
+    .ss-form-group input[type="text"],
+    .ss-form-group input[type="email"],
+    .ss-form-group input[type="date"],
+    .ss-form-group input[type="number"],
+    .ss-form-group select,
+    .ss-form-group textarea {
+        font-size: 0.95rem;
+    }
+    
+    .ss-form-group label {
+        font-size: 0.75rem;
+    }
+    
+    .ss-checkbox-item {
+        font-size: 0.85rem;
+    }
+    
+    .ss-submit-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
