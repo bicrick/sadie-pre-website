@@ -97,7 +97,7 @@ Points to: 185.199.108.153
 
 Type: A
 Host: @
-Points to: 185.199.109.153
+Points to: 185.199.109.153 
 
 Type: A
 Host: @
